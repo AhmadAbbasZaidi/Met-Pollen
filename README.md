@@ -17,7 +17,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](https://gi
 
 For android all you will need to do is install android studio latest version with its prerequisite Java. Android studio will get all of other dependencies.
 
-Setup database at you end. In Application there are three types of data that is Districts, Current Weather and Forecast Weather
+Setup database at your end. In Application there are three types of data that is Districts, Current Weather and Forecast Weather
 
 **Setup**
 1. Add your **base url** in 
@@ -123,8 +123,9 @@ c. Method -> POST
 
 
 	**Result**
-	{
-  "Result": {
+
+  {
+  	"Result": {
     "Status": 200,
     "Message": {
       "Weatherdata": {
@@ -165,3 +166,8 @@ c. Method -> POST
     }
   }
 }
+
+
+**Preview**
+
+(https://github.com/AhmadAbbasZaidi/Met-Pollen/blob/master/preview/1.png)
