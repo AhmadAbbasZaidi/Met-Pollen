@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class ApiHandler {
 
-    protected final String baseUrl = "Your URL Here";
+    protected final String baseUrl = "http://demo.lmkt.com/pmdpollen/";
 
     protected JSONObject alternatebody;
     protected JSONObject responseJson;
