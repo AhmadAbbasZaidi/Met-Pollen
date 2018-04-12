@@ -1,3 +1,4 @@
+
 # Welcome to Met-Pollen!
 # Vision
 
@@ -10,7 +11,7 @@ The aim behind this application is to provide Pakistan pollen and weather data t
 
 ## Licence
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://gist.github.com/PurpleBooth/LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/AhmadAbbasZaidi/Met-Pollen/blob/master/LICENSE.md) file for details
 
 ## **Prerequisites**
 
@@ -35,19 +36,19 @@ b. Body -> empty
 c. Method -> GET
 
 	**Result**
->		{
->		"Result": {
->				"Status": 200,
->				"Message": [
->								{
->								"Station_Name": "ISLAMABAD",
->							"Latitude": 33.71,
->									"Id": 236,
->								"Longitude": 73.07
->					 			}
->					 		]
->				}
->		}
+{
+  "Result": {
+    "Status": 200,
+    "Message": [
+      {
+        "Station_Name": "ISLAMABAD",
+        "Latitude": 33.71,
+        "Id": 236,
+        "Longitude": 73.07
+      }
+    ]
+  }
+}
 
  2. **getforecast**
 
@@ -63,7 +64,7 @@ c. Method -> POST
 
 
 	**Result**
->{
+{
   "Result": {
     "Status": 200,
     "Message": {
@@ -81,7 +82,7 @@ c. Method -> POST
           "Rain_Humidity": 0,
           "Wind_Direction": 0,
           "Cloud": 0,
-          "imageurl": "http: //demo.lmkt.com/pmdpollen/assets/images/islamabad.png",
+          "imageurl": "",
           "Id": 873757,
           "Grid_Location_Id": 6778
         }
@@ -103,6 +104,61 @@ c. Method -> POST
           "SunSet": "2018-01-28 17:35:16.0",
           "SunRise": "2018-01-28 07:08:25.0"
         }
+      }
+    }
+  }
+}
+
+ 3. **getcurrent**
+
+a. Header -> empty
+
+b. Body ->  
+- latitude=33.71
+- longitude=73.07
+
+c. Method -> POST
+
+
+	**Result**
+	{
+  "Result": {
+    "Status": 200,
+    "Message": {
+      "Weatherdata": {
+        "Min_Temperature": 7,
+        "Entry_Time": "2018-01-17 12:23:59.765275",
+        "Dew_Point": 4.78577,
+        "Wind_Speed": 15.2001,
+        "Formatted_Weather_Time": "2018-01-26 12:23:59.0",
+        "Max_Temperature": 21,
+        "Precipitation": 0.999144,
+        "Mean_Temperature": 17,
+        "Wind_Direction": "SE",
+        "Station_Id": 133,
+        "imageurl": "",
+        "Visibility": 7.70851,
+        "Id": 33,
+        "Relative_Humidity": 44.8952
+      },
+      "Pollen": {
+        "StationName": "E-8",
+        "total": 64,
+        "pollen_percentage": 75,
+        "total_status": "High",
+        "Pollendata": [
+          {
+            "name": "Paper_Mulbery",
+            "count": 0,
+            "status": "Absent"
+          }
+        ],
+        "Id": 2,
+        "StationId": 12
+      },
+      "SunRiseSet": {
+        "SunSet": "2018-01-26 17:33:15.0",
+        "SunRise": "2018-01-26 07:09:28.0"
       }
     }
   }
