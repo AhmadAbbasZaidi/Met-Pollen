@@ -174,5 +174,9 @@ c. Method -> POST
 <p align="center">
   <img src="https://github.com/AhmadAbbasZaidi/Met-Pollen/blob/master/preview/1.png" width="350"/>
   <img src="https://github.com/AhmadAbbasZaidi/Met-Pollen/blob/master/preview/2.png" width="350"/>
+  <img src="https://github.com/AhmadAbbasZaidi/Met-Pollen/blob/master/preview/3.png" width="350"/>
+  <img src="https://github.com/AhmadAbbasZaidi/Met-Pollen/blob/master/preview/4.png" width="350"/>
+  <img src="https://github.com/AhmadAbbasZaidi/Met-Pollen/blob/master/preview/5.png" width="350"/>
+  <img src="https://github.com/AhmadAbbasZaidi/Met-Pollen/blob/master/preview/6.png" width="350"/>
 </p>
 </html>
