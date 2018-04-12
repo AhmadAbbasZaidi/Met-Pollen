@@ -37,17 +37,17 @@ c. Method -> GET
 	**Result**
 >		{
 >		  "Result": {
->		    "Status": 200,
->		    "Message": [
->					      {
->	       				"Station_Name": "ISLAMABAD",
->    	   				"Latitude": 33.71,
->							"Id": 236,
->  		  				"Longitude": 73.07
->							}
->						]
->			}
->		}	
+>		    		"Status": 200,
+>		    		"Message": [
+>							      {
+>	       							"Station_Name": "ISLAMABAD",
+>    	   							"Latitude": 33.71,
+>									"Id": 236,
+>  		  							"Longitude": 73.07
+>								  }
+>							   ]
+>					}
+>		}
 
  2. **getforecast**
 
@@ -62,8 +62,9 @@ b. Body ->
 c. Method -> POST
 
 **Result**
->    {
->			text"Result":  {
+
+>	{
+>			"Result":  {
 >    					"Status": 200,
 >    					"Message": {
 >    								"Weatherdata": [
