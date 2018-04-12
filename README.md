@@ -32,7 +32,9 @@ Focusing sub urls in **Met-Pollen/app/src/main/java/com/cfp/metpollen/data/api/A
  1. **getstations**
 
 a. Header -> empty
+
 b. Body -> empty
+
 c. Method -> GET
 
 	**Result**
