@@ -170,4 +170,9 @@ c. Method -> POST
 
 **Preview**
 
-(https://github.com/AhmadAbbasZaidi/Met-Pollen/blob/master/preview/1.png)
+<html>
+<p align="center">
+  <img src="https://github.com/AhmadAbbasZaidi/Met-Pollen/blob/master/preview/1.png" width="350"/>
+  <img src="https://github.com/AhmadAbbasZaidi/Met-Pollen/blob/master/preview/2.png" width="350"/>
+</p>
+</html>
