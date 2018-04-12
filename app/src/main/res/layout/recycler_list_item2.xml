@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/convertView"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/overlay"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@android:color/white"
+                android:minHeight="100dp"
+                android:visibility="invisible" />
+
+            <RelativeLayout
+                android:id="@+id/rlleft"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/line"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgleft"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/sunrise"
+                    android:tint="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/tv_risefall_left"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/imgleft"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="05:30 pm"
+                    android:textColor="@android:color/white"
+                    android:textSize="8dp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/lineleft"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@id/tv_risefall_left"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:color/white" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/line"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/sunrise"
+                    android:tint="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/tv_risefall"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/img"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="05:30 pm"
+                    android:textColor="@android:color/white"
+                    android:textSize="8dp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/line2"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@id/tv_risefall"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:color/white" />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/holo_orange_light" />
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="01:00 pm"
+            android:textColor="@android:color/white"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/cloud"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/sunrise"
+            android:tint="@android:color/white"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+</LinearLayout>

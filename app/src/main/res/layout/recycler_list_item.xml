@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/convertView"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@drawable/graph_vertical_line"
+                android:minHeight="100dp"
+                android:visibility="visible" />
+
+            <RelativeLayout
+                android:id="@+id/rlleft"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/line"
+                android:orientation="vertical">
+
+
+                <View
+                    android:id="@+id/lineleft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/graph_vertical_dashed_line"
+                    android:layerType="software" />
+
+                <TextView
+                    android:id="@+id/tv_risefall_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/lineleft"
+                    android:gravity="center"
+                    android:layout_centerHorizontal="true"
+                    android:text="05:30 pm"
+                    android:textColor="@android:color/holo_orange_light"
+                    android:textSize="6dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imgleft"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:layout_above="@id/tv_risefall_left"
+                    android:tint="@android:color/holo_orange_light"
+                    android:src="@drawable/sunrise" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/line"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <View
+                    android:id="@+id/line2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layerType="software"
+                    android:background="@drawable/graph_vertical_dashed_line" />
+
+                <TextView
+                    android:id="@+id/tv_risefall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/line2"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="05:30 pm"
+                    android:textColor="@android:color/holo_orange_light"
+                    android:textSize="6dp"
+                    android:textStyle="bold"/>
+
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:layout_centerHorizontal="true"
+                    android:layout_above="@id/tv_risefall"
+                    android:tint="@android:color/holo_orange_light"
+                    android:src="@drawable/sunrise" />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/lineLeft"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="0.5"
+                android:background="@android:color/holo_orange_light" />
+
+            <View
+                android:id="@+id/lineRight"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="0.5"
+                android:background="@android:color/holo_orange_light" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="01:00 pm"
+            android:textColor="@color/white_pollen_text"
+            android:textSize="10dp"
+            android:layout_margin="3dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/cloud"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/sun"
+            android:tint="@color/white"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="4"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:layout_width="0dp"
+        android:text="Paper Mulbery"
+        android:textColor="@color/white_pollen_text"
+        android:singleLine="true"
+        android:textSize="10dp" />
+
+    <TextView
+        android:id="@+id/count"
+        android:gravity="center_horizontal"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:text="01"
+        android:textColor="@color/white_pollen_text"
+        android:textSize="10dp" />
+
+    <TextView
+        android:id="@+id/status"
+        android:gravity="right"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:layout_width="0dp"
+        android:text="Low"
+        android:textColor="@color/white_pollen_text"
+        android:textSize="10dp" />
+
+
+</LinearLayout>

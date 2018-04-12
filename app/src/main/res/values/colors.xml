@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- <color name="colorPrimary">#3F51B5</color>
+     <color name="colorPrimaryDark">#303F9F</color>
+     <color name="colorAccent">#FF4081</color>-->
+
+
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorAccent">#ffffff</color>
+
+    <color name="white">#ffffff</color>
+    <color name="white_overlay">#55ffffff</color>
+    <color name="white_Horizontal_line">#9Affffff</color>
+    <color name="white_Horizontal_line2">#67ffffff</color>
+    <color name="white_overlay_pollen">#4Cffffff</color>
+    <color name="white_search_Item">#E6ffffff</color>
+    <color name="blue_search_Item">#F905417f</color>
+    <color name="white_overlay_location">#AAffffff</color>
+    <color name="black_overlay_location">#80000000</color>
+    <color name="black_overlay_navigation_view">#6f000000</color>
+    <color name="black_overlay_navigation_header">#55000000</color>
+    <color name="white_pollen_text">#ccffffff</color>
+    <color name="overlay">#55000000</color>
+    <color name="overlay_title">#6f000000</color>
+    <color name="green">#48bb03</color>
+    <color name="transparent">#00FFFFFF</color>
+
+    <!--tab colors-->
+    <color name="tab_white_unselected">#40FFFFFF</color>
+    <color name="tab_white_selected">#11ffffff</color>
+    <color name="tab_shadow_background">#11000000</color>
+    <!--<color name="tab_text_white">#8cffffff</color>-->
+    <color name="tab_text_white">#ffffffff</color>
+    <color name="blueoverlay">#b805417f</color>
+    <!--<color name="blueoverlay">#d205417f</color>-->
+    <color name="blueoverlayOpaque">#E605417f</color>
+    <color name="blueoverlaydark">#8005417f</color>
+    <color name="dayoverlay">#E605417f</color>
+    <color name="blueProgress">#FF05417f</color>
+    <color name="nightoverlay">#e6011d39</color>
+
+
+    /*
+    50 – 40 maroon : #CCae0202
+    39 – 30 red : #CCe40404
+    29 – 20 orange : #CCe45304
+    19 – 11 Purple : #CCb704e4
+    10 – 0 Blue : #CC2f20f1
+    0 – lower Aqua : #CC2087f1
+    */
+
+
+    <color name="red_without_opacity">#FFe40404</color>
+    <color name="orange_without_opacity">#FFe45304</color>
+    <color name="green_without_opacity">#48bb03</color>
+    <color name="dark_red">#FF0000</color>
+
+    <!-- <color name="maroon">#ae0202</color>
+     <color name="red">#e40404</color>
+     <color name="orange">#e45304</color>
+     <color name="purple">#b704e4</color>
+     <color name="blue">#2f20f1</color>
+     <color name="aqua">#2087f1</color>-->
+
+    <color name="maroon">#80ae0202</color>
+    <color name="red">#80e40404</color>
+    <color name="orange">#80e45304</color>
+    <color name="purple">#80b704e4</color>
+    <color name="blue">#802f20f1</color>
+    <color name="aqua">#802087f1</color>
+
+    <!-- <color name="maroon">#A6ae0202</color>
+     <color name="red">#A6e40404</color>
+     <color name="orange">#A6e45304</color>
+     <color name="purple">#A6b704e4</color>
+     <color name="blue">#A62f20f1</color>
+     <color name="aqua">#A62087f1</color>-->
+
+    <color name="black">#FF000000</color>
+    <color name="yellow">#FFFF00</color>
+
+
+    <color name="rainbow_bright_pink">#40ff007f</color>
+    <color name="rainbow_red">#40FF0000</color>
+    <color name="rainbow_orange">#40FF7F00</color>
+    <color name="rainbow_yellow">#40FFFF00</color>
+    <color name="rainbow_chartreuse">#407FFF00</color>
+    <color name="rainbow_green">#4000FF00</color>
+    <color name="rainbow_spring_green">#4000FF7F</color>
+    <color name="rainbow_cyan">#4000FFFF</color>
+    <color name="rainbow_azure">#40007FFF</color>
+    <color name="rainbow_blue">#400000FF</color>
+    <color name="rainbow_violet">#407F00FF</color>
+    <color name="rainbow_magenta">#40FF00FF</color>
+    <color name="widget_background">#9f021b32</color>
+    <array name="rainbow">
+        <item>@color/widget_background</item>
+        <item>@color/rainbow_bright_pink</item>
+        <item>@color/rainbow_red</item>
+        <item>@color/rainbow_orange</item>
+        <item>@color/rainbow_yellow</item>
+        <item>@color/rainbow_chartreuse</item>
+        <item>@color/rainbow_green</item>
+        <item>@color/rainbow_spring_green</item>
+        <item>@color/rainbow_cyan</item>
+        <item>@color/rainbow_azure</item>
+        <item>@color/rainbow_blue</item>
+        <item>@color/rainbow_violet</item>
+        <item>@color/blueoverlayOpaque</item>
+        <item>@color/nightoverlay</item>
+        <item>@color/maroon</item>
+        <item>@color/red_without_opacity</item>
+        <item>@color/orange</item>
+        <item>@color/purple</item>
+        <item>@color/blue</item>
+        <item>@color/aqua</item>
+    </array>
+</resources>

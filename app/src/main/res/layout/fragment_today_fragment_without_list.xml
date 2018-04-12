@@ -1,0 +1,1703 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cfp.metpollen.view.fragments.TodayFragmentWithoutList">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <!-- TODO: Update blank fragment layout -->
+        <ScrollView
+            android:id="@+id/scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!--item first-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <View
+                            android:id="@+id/view1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:layout_weight="1" />
+
+                        <LinearLayout
+                            android:id="@+id/ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp">
+
+                                <FrameLayout
+                                    android:id="@+id/fl"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/image"
+                                            android:layout_width="52dp"
+                                            android:layout_height="52dp"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="10dp"
+                                            android:padding="5dp"
+                                            android:src="@drawable/humidity" />
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentBottom="true"
+                                            android:layout_marginBottom="25dp"
+                                            android:layout_marginLeft="20dp"
+                                            android:layout_marginRight="25dp"
+                                            android:layout_marginTop="25dp"
+                                            android:orientation="vertical">
+
+                                            <TextView
+                                                android:id="@+id/pollen_status"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="left"
+                                                android:text="Normal"
+                                                android:textColor="@color/white"
+                                                android:textSize="8dp" />
+
+                                            <TextView
+                                                android:id="@+id/progressText"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:singleLine="true"
+                                                android:text="60%"
+                                                android:textColor="@color/white"
+                                                android:textSize="16dp"
+                                                android:textStyle="bold" />
+                                        </LinearLayout>
+
+
+                                    </RelativeLayout>
+
+
+                                    <com.cfp.metpollen.view.customViews.CircleProgressBar
+                                        android:id="@+id/circleProgressBar"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:indeterminate="false"
+                                        android:layerType="software" />
+
+                                    <ImageView
+                                        android:id="@+id/pollenChecked"
+                                        android:layout_width="25dp"
+                                        android:layout_height="25dp"
+                                        android:layout_gravity="right"
+                                        android:layout_margin="5dp"
+                                        android:background="@drawable/circle_background"
+                                        android:padding="6dp"
+                                        android:src="@drawable/ic_action_check" />
+
+                                </FrameLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_gravity="bottom"
+                                    android:layout_marginLeft="90dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/textViewPollen"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="bottom"
+                                        android:includeFontPadding="false"
+                                        android:lineSpacingExtra="0dp"
+                                        android:text="   Pollen"
+                                        android:textColor="@color/white"
+                                        android:textSize="12dp"
+                                        android:visibility="visible" />
+
+                                    <TextView
+                                        android:id="@+id/textViewCount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="bottom"
+                                        android:includeFontPadding="false"
+                                        android:lineSpacingExtra="0dp"
+                                        android:text="Count"
+                                        android:textColor="@color/white"
+                                        android:textSize="12dp"
+                                        android:visibility="visible" />
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/temperature"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:autoSizeMaxTextSize="150dp"
+                                    android:autoSizeMinTextSize="150dp"
+                                    android:autoText="true"
+                                    android:elegantTextHeight="true"
+                                    android:fontFamily="@font/roboto_thin"
+                                    android:gravity="bottom"
+                                    android:includeFontPadding="false"
+                                    android:letterSpacing="-.07"
+                                    android:lineSpacingExtra="160dp"
+                                    android:padding="0dp"
+                                    android:text="27°"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="150dp" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:layout_marginTop="10dp"
+                                    android:orientation="vertical"
+                                    android:visibility="visible">
+
+                                    <ImageView
+                                        android:id="@+id/conditionImage"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="70dp"
+                                        android:layout_gravity="right"
+                                        android:adjustViewBounds="true"
+                                        android:src="@drawable/clear" />
+
+                                    <TextView
+                                        android:id="@+id/weatherCondition"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="right"
+                                        android:layout_marginBottom="5dp"
+                                        android:layout_marginTop="5dp"
+                                        android:includeFontPadding="false"
+                                        android:text="Partly Cloudy"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="14dp" />
+
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <ImageView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="40dp"
+                                                android:layout_gravity="right"
+                                                android:adjustViewBounds="true"
+                                                android:padding="5dp"
+                                                android:scaleType="fitCenter"
+                                                android:src="@drawable/temp_up" />
+
+                                            <TextView
+                                                android:id="@+id/tempMax"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:gravity="center"
+                                                android:includeFontPadding="false"
+                                                android:text="20°"
+                                                android:textColor="@android:color/white"
+                                                android:textSize="30dp" />
+
+                                        </LinearLayout>
+
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <ImageView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="40dp"
+                                                android:layout_gravity="right"
+                                                android:adjustViewBounds="true"
+                                                android:padding="5dp"
+                                                android:scaleType="fitCenter"
+                                                android:src="@drawable/temp_down" />
+
+                                            <TextView
+
+                                                android:id="@+id/tempMin"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:gravity="center"
+                                                android:includeFontPadding="false"
+                                                android:text="20°"
+                                                android:textColor="@android:color/white"
+                                                android:textSize="30dp" />
+
+                                        </LinearLayout>
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </FrameLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <!--item second-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" />
+
+                    <!--humidity-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@color/overlay"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:padding="5dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/dewpont" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="Humidity"
+                            android:textColor="@android:color/white"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/humidity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="10dp"
+                            android:gravity="center_vertical"
+                            android:text="61 %"
+                            android:textColor="@android:color/white"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <!--wind-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/overlay"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:padding="5dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/clear_wind"
+                            android:tint="@android:color/white" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="Wind"
+                            android:textColor="@android:color/white"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/windspeed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="10dp"
+                            android:gravity="center_vertical"
+                            android:text="14 mph"
+                            android:textColor="@android:color/white"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <!--wind direction-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/overlay"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:padding="5dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/wind_direction" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="Wind Direction"
+                            android:textColor="@android:color/white"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/windDirection"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="10dp"
+                            android:gravity="center_vertical"
+                            android:text="NW"
+                            android:textColor="@android:color/white"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <!--feels like-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/overlay"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:padding="5dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/feel" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="Feels Like"
+                            android:textColor="@android:color/white"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/feelsLike"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="10dp"
+                            android:gravity="center_vertical"
+                            android:text="23 °"
+                            android:textColor="@android:color/white"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <!--visibility-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/overlay"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:padding="5dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/visibility" />
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="Visibility"
+                            android:textColor="@android:color/white"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/visibility"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="10dp"
+                            android:gravity="center_vertical"
+                            android:text="6 km"
+                            android:textColor="@android:color/white"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <!--due point-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/overlay"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:padding="5dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/humidity" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="Dew Point"
+                            android:textColor="@android:color/white"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/dewPoint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="10dp"
+                            android:gravity="center_vertical"
+                            android:text="13 °"
+                            android:textColor="@android:color/white"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <!--item three-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/overlay"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="Precipitation"
+                            android:textColor="@android:color/white"
+                            android:textSize="20dp"
+                            android:textStyle="normal" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/white_Horizontal_line" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/now"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="10%"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/nowImage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:adjustViewBounds="true"
+                                    android:padding="5dp"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/precipi_0" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Now"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/white_Horizontal_line" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/noon"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="10%"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/noonImage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:adjustViewBounds="true"
+                                    android:padding="5dp"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/precipi_10" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Noon"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/white_Horizontal_line" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/evening"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="50%"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/eveningImage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:adjustViewBounds="true"
+                                    android:padding="5dp"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/precipi_50" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Evening"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/white_Horizontal_line" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tonight"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="90%"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/tonightImage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:adjustViewBounds="true"
+                                    android:padding="5dp"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/precipi_90" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Tonight"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <!--item four-->
+                <LinearLayout
+                    android:id="@+id/pollenData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/overlay"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="Pollen Count"
+                            android:textColor="@android:color/white"
+                            android:textSize="20dp"
+                            android:textStyle="normal" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/white_Horizontal_line" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="80dp">
+
+                                <FrameLayout
+                                    android:id="@+id/flPollen"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/imagePollen"
+                                            android:layout_width="45dp"
+                                            android:layout_height="45dp"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="5dp"
+                                            android:padding="2dp"
+                                            android:src="@drawable/pollen" />
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentBottom="true"
+                                            android:layout_marginBottom="20dp"
+                                            android:layout_marginLeft="15dp"
+                                            android:orientation="vertical">
+
+                                            <TextView
+                                                android:id="@+id/pollen_status_item"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="left"
+                                                android:text="Normal"
+                                                android:textColor="@color/white"
+                                                android:textSize="8dp" />
+
+                                            <TextView
+                                                android:id="@+id/progressTextItem"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:singleLine="true"
+                                                android:text="60%"
+                                                android:textColor="@color/white"
+                                                android:textSize="10dp"
+                                                android:textStyle="bold" />
+                                        </LinearLayout>
+
+
+                                    </RelativeLayout>
+
+                                    <com.cfp.metpollen.view.customViews.CircleProgressBar
+                                        android:id="@+id/circleProgressBarPollen"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:indeterminate="false"
+                                        android:layerType="software" />
+
+                                    <ImageView
+                                        android:id="@+id/pollenCheckedPollen"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_gravity="right"
+                                        android:layout_margin="2dp"
+                                        android:background="@drawable/circle_background"
+                                        android:padding="6dp"
+                                        android:src="@drawable/ic_action_check" />
+
+                                </FrameLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_gravity="bottom"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="80dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="bottom"
+                                        android:includeFontPadding="false"
+                                        android:lineSpacingExtra="0dp"
+                                        android:text="   Pollen"
+                                        android:textColor="@color/white"
+                                        android:textSize="8dp"
+                                        android:visibility="visible" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="bottom"
+                                        android:includeFontPadding="false"
+                                        android:lineSpacingExtra="0dp"
+                                        android:text="Count"
+                                        android:textColor="@color/white"
+                                        android:textSize="8dp"
+                                        android:visibility="visible" />
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.3"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <ImageView
+                                    android:id="@+id/imageView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:adjustViewBounds="true"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/pollencount_ok" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.1" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.6"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="4">
+
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1.5"
+                                        android:text="Types of Pollen"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/pollenArea"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center_horizontal"
+                                        android:text="H-8"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1.5"
+                                        android:gravity="right"
+                                        android:text="Category"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold" />
+
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/lLPollenData"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:orientation="vertical" />
+                                <!--
+                                                            <LinearLayout
+                                                                android:layout_width="match_parent"
+                                                                android:layout_height="wrap_content"
+                                                                android:layout_marginTop="10dp"
+                                                                android:orientation="horizontal"
+                                                                android:weightSum="4">
+
+
+                                                                <TextView
+                                                                    android:layout_width="0dp"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="1.5"
+                                                                    android:text="Paper Mulbery"
+                                                                    android:textColor="@color/white_pollen_text"
+                                                                    android:textSize="10dp" />
+
+                                                                <TextView
+                                                                    android:layout_width="0dp"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="1"
+                                                                    android:gravity="center_horizontal"
+                                                                    android:text="01"
+                                                                    android:textColor="@color/white_pollen_text"
+                                                                    android:textSize="10dp" />
+
+                                                                <TextView
+                                                                    android:layout_width="0dp"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="1.5"
+                                                                    android:gravity="right"
+                                                                    android:text="Low"
+                                                                    android:textColor="@color/white_pollen_text"
+                                                                    android:textSize="10dp" />
+
+
+                                                            </LinearLayout>
+
+
+                                                            <LinearLayout
+                                                                android:layout_width="match_parent"
+                                                                android:layout_height="wrap_content"
+                                                                android:orientation="horizontal"
+                                                                android:weightSum="4">
+
+
+                                                                <TextView
+                                                                    android:layout_width="0dp"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="1.5"
+                                                                    android:text="Acacia"
+                                                                    android:textColor="@color/white_pollen_text"
+                                                                    android:textSize="10dp" />
+
+                                                                <TextView
+                                                                    android:layout_width="0dp"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="1"
+                                                                    android:gravity="center_horizontal"
+                                                                    android:text="00"
+                                                                    android:textColor="@color/white_pollen_text"
+                                                                    android:textSize="10dp" />
+
+                                                                <TextView
+                                                                    android:layout_width="0dp"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="1.5"
+                                                                    android:gravity="right"
+                                                                    android:text="Absent"
+                                                                    android:textColor="@color/white_pollen_text"
+                                                                    android:textSize="10dp" />
+
+
+                                                            </LinearLayout>
+
+
+                                                            <LinearLayout
+                                                                android:layout_width="match_parent"
+                                                                android:layout_height="wrap_content"
+                                                                android:orientation="horizontal"
+                                                                android:weightSum="4">
+
+
+                                                                <TextView
+                                                                    android:layout_width="0dp"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="1.5"
+                                                                    android:text="Eucalyptus"
+                                                                    android:textColor="@color/white_pollen_text"
+                                                                    android:textSize="10dp" />
+
+                                                                <TextView
+                                                                    android:layout_width="0dp"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="1"
+                                                                    android:gravity="center_horizontal"
+                                                                    android:text="00"
+                                                                    android:textColor="@color/white_pollen_text"
+                                                                    android:textSize="10dp" />
+
+                                                                <TextView
+                                                                    android:layout_width="0dp"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="1.5"
+                                                                    android:gravity="right"
+                                                                    android:text="Absent"
+                                                                    android:textColor="@color/white_pollen_text"
+                                                                    android:textSize="10dp" />
+
+
+                                                            </LinearLayout>
+
+
+                                                            <LinearLayout
+                                                                android:layout_width="match_parent"
+                                                                android:layout_height="wrap_content"
+                                                                android:orientation="horizontal"
+                                                                android:weightSum="4">
+
+
+                                                                <TextView
+                                                                    android:layout_width="0dp"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="1.5"
+                                                                    android:text="Pines"
+                                                                    android:textColor="@color/white_pollen_text"
+                                                                    android:textSize="10dp" />
+
+                                                                <TextView
+                                                                    android:layout_width="0dp"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="1"
+                                                                    android:gravity="center_horizontal"
+                                                                    android:text="00"
+                                                                    android:textColor="@color/white_pollen_text"
+                                                                    android:textSize="10dp" />
+
+                                                                <TextView
+                                                                    android:layout_width="0dp"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="1.5"
+                                                                    android:gravity="right"
+                                                                    android:text="Absent"
+                                                                    android:textColor="@color/white_pollen_text"
+                                                                    android:textSize="10dp" />
+
+
+                                                            </LinearLayout>
+
+
+                                                            <LinearLayout
+                                                                android:layout_width="match_parent"
+                                                                android:layout_height="wrap_content"
+                                                                android:orientation="horizontal"
+                                                                android:weightSum="4">
+
+
+                                                                <TextView
+                                                                    android:layout_width="0dp"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="1.5"
+                                                                    android:text="Grasses"
+                                                                    android:textColor="@color/white_pollen_text"
+                                                                    android:textSize="10dp" />
+
+                                                                <TextView
+                                                                    android:layout_width="0dp"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="1"
+                                                                    android:gravity="center_horizontal"
+                                                                    android:text="00"
+                                                                    android:textColor="@color/white_pollen_text"
+                                                                    android:textSize="10dp" />
+
+                                                                <TextView
+                                                                    android:layout_width="0dp"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="1.5"
+                                                                    android:gravity="right"
+                                                                    android:text="Absent"
+                                                                    android:textColor="@color/white_pollen_text"
+                                                                    android:textSize="10dp" />
+
+
+                                                            </LinearLayout>
+
+
+                                                            <LinearLayout
+                                                                android:layout_width="match_parent"
+                                                                android:layout_height="wrap_content"
+                                                                android:orientation="horizontal"
+                                                                android:weightSum="4">
+
+                                                                <TextView
+                                                                    android:layout_width="0dp"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="1.5"
+                                                                    android:text="Cannabis"
+                                                                    android:textColor="@color/white_pollen_text"
+                                                                    android:textSize="10dp" />
+
+                                                                <TextView
+                                                                    android:layout_width="0dp"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="1"
+                                                                    android:gravity="center_horizontal"
+                                                                    android:text="02"
+                                                                    android:textColor="@color/white_pollen_text"
+                                                                    android:textSize="10dp" />
+
+                                                                <TextView
+                                                                    android:layout_width="0dp"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="1.5"
+                                                                    android:gravity="right"
+                                                                    android:text="Low"
+                                                                    android:textColor="@color/white_pollen_text"
+                                                                    android:textSize="10dp" />
+
+
+                                                            </LinearLayout>
+
+
+                                                            <LinearLayout
+                                                                android:layout_width="match_parent"
+                                                                android:layout_height="wrap_content"
+                                                                android:orientation="horizontal"
+                                                                android:weightSum="4">
+
+
+                                                                <TextView
+                                                                    android:layout_width="0dp"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="1.5"
+                                                                    android:text="Dandelion"
+                                                                    android:textColor="@color/white_pollen_text"
+                                                                    android:textSize="10dp" />
+
+                                                                <TextView
+                                                                    android:layout_width="0dp"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="1"
+                                                                    android:gravity="center_horizontal"
+                                                                    android:text="00"
+                                                                    android:textColor="@color/white_pollen_text"
+                                                                    android:textSize="10dp" />
+
+                                                                <TextView
+                                                                    android:layout_width="0dp"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="1.5"
+                                                                    android:gravity="right"
+                                                                    android:text="Absent"
+                                                                    android:textColor="@color/white_pollen_text"
+                                                                    android:textSize="10dp" />
+
+
+                                                            </LinearLayout>
+
+
+                                                            <LinearLayout
+                                                                android:layout_width="match_parent"
+                                                                android:layout_height="wrap_content"
+                                                                android:orientation="horizontal"
+                                                                android:weightSum="4">
+
+
+                                                                <TextView
+                                                                    android:layout_width="0dp"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="1.5"
+                                                                    android:text="Alternaria"
+                                                                    android:textColor="@color/white_pollen_text"
+                                                                    android:textSize="10dp" />
+
+                                                                <TextView
+                                                                    android:layout_width="0dp"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="1"
+                                                                    android:gravity="center_horizontal"
+                                                                    android:text="00"
+                                                                    android:textColor="@color/white_pollen_text"
+                                                                    android:textSize="10dp" />
+
+                                                                <TextView
+                                                                    android:layout_width="0dp"
+                                                                    android:layout_height="match_parent"
+                                                                    android:layout_weight="1.5"
+                                                                    android:gravity="right"
+                                                                    android:text="Absent"
+                                                                    android:textColor="@color/white_pollen_text"
+                                                                    android:textSize="10dp" />
+
+
+                                                            </LinearLayout>
+                                -->
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="4">
+
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1.5"
+                                        android:text="Total"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/totalCountPollen"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center_horizontal"
+                                        android:text="09"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/totalStatusPollen"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1.5"
+                                        android:gravity="right"
+                                        android:text="Low"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold" />
+
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <!--item five-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/overlay"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="Wind &amp; Pressure"
+                            android:textColor="@android:color/white"
+                            android:textSize="20dp"
+                            android:textStyle="normal" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/white_Horizontal_line" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+                            <FrameLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+                                <!--bigger-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="0.25" />
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="0.75"
+                                        android:adjustViewBounds="true"
+                                        android:padding="10dp"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/windmill_base" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/fan1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="0.5"
+                                        android:adjustViewBounds="true"
+                                        android:layerType="software"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/windmill_fan" />
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="0.5" />
+
+                                </LinearLayout>
+
+                                <!--smaiile-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="0.5" />
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="0.5"
+                                        android:orientation="vertical">
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="0dp"
+                                            android:layout_weight="0.3" />
+
+                                        <FrameLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="0dp"
+                                            android:layout_weight="0.7"
+                                            android:orientation="vertical">
+                                            <!--bigger-->
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:orientation="vertical">
+
+                                                <View
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="0dp"
+                                                    android:layout_weight="0.25" />
+
+                                                <ImageView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="0dp"
+                                                    android:layout_weight="0.75"
+                                                    android:adjustViewBounds="true"
+                                                    android:padding="10dp"
+                                                    android:scaleType="fitCenter"
+                                                    android:src="@drawable/windmill_base" />
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:orientation="vertical">
+
+                                                <FrameLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="0dp"
+                                                    android:layout_weight="0.5">
+
+                                                    <ImageView
+                                                        android:id="@+id/fan2"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:layout_weight="0.5"
+                                                        android:adjustViewBounds="true"
+                                                        android:layerType="software"
+                                                        android:scaleType="fitCenter"
+                                                        android:src="@drawable/windmill_fan" />
+                                                </FrameLayout>
+
+                                                <ImageView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="0dp"
+                                                    android:layout_weight="0.5" />
+
+                                            </LinearLayout>
+
+                                        </FrameLayout>
+
+                                    </LinearLayout>
+                                </LinearLayout>
+
+
+                            </FrameLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="vertical">
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight="1.5"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:text="Wind"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="12dp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/windMillSpeed"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center_vertical"
+                                            android:text="13"
+                                            android:textColor="@android:color/white"
+                                            android:textSize="12dp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:gravity="center_vertical"
+                                            android:text="mph NNW"
+                                            android:textColor="@android:color/white"
+                                            android:textSize="12dp" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0.5dp"
+                                    android:background="@color/white_Horizontal_line" />
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight="1.5"
+                                    android:gravity="right"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="12dp"
+                                            android:layout_gravity="center_vertical"
+                                            android:adjustViewBounds="true"
+                                            android:scaleType="fitCenter"
+                                            android:src="@drawable/ic_arrow_barometer" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="2dp"
+                                            android:gravity="center_vertical"
+                                            android:text="Barometer"
+                                            android:textColor="@android:color/white"
+                                            android:textSize="12dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="right"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/pressure"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center_vertical"
+                                            android:text="31.15"
+                                            android:textColor="@android:color/white"
+                                            android:textSize="12dp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:gravity="center_vertical"
+                                            android:text="inHq"
+                                            android:textColor="@android:color/white"
+                                            android:textSize="12dp" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <!--item six-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/overlay"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="Sun &amp; Moon"
+                            android:textColor="@android:color/white"
+                            android:textSize="20dp"
+                            android:textStyle="normal" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/white_Horizontal_line" />
+
+                        <com.cfp.metpollen.view.customViews.ArcView
+                            android:id="@+id/arcView"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_marginBottom="10dp"
+
+                            android:background="@color/transparent"
+                            app:circle_radius="5.0"
+                            app:padding="20.0"
+                            app:sun_size="20.0"
+                            app:textPadding="40"
+                            app:textsize="12.0" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <!--item seven-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/top"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:background="@color/overlay"
+                        android:orientation="vertical"
+                        android:padding="10dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:text="Map"
+                                android:textColor="@android:color/white"
+                                android:textSize="20dp"
+                                android:textStyle="normal" />
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:padding="8dp"
+                                android:src="@drawable/map_rain" />
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:padding="8dp"
+                                android:src="@drawable/map_heat" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/white_Horizontal_line" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            android:layout_margin="10dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/map" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <com.cfp.metpollen.view.customViews.HeatMapGraphView
+        android:id="@+id/heatmapgraph"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/heatMapGraph"
+        android:layout_gravity="bottom"
+        android:layerType="software" />
+
+</FrameLayout>

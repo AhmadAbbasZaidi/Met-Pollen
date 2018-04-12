@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textview_section_header"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="Tue, Dec 12"
+        android:textColor="@color/white_pollen_text"
+        android:background="@color/overlay_title"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:padding="20dp" />
+
+    <LinearLayout
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_horizontal"
+        android:background="@color/overlay"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:gravity="center_vertical|left"
+            android:singleLine="true"
+            android:text="2PM"
+            android:textAllCaps="true"
+            android:textColor="@color/white_pollen_text"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imagePrecipitation"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:tint="@color/white_pollen_text"/>
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/temp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:gravity="center_vertical|center"
+            android:singleLine="true"
+            android:text="35°"
+            android:textAllCaps="true"
+            android:textColor="@color/white_pollen_text"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/precipitation"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:gravity="center_vertical|right"
+            android:singleLine="true"
+            android:text="10%"
+            android:textAllCaps="false"
+            android:textColor="@color/white_pollen_text"
+            android:textSize="12dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/overlay">
+    <View
+        android:id="@+id/hLine"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/white_Horizontal_line2"/>
+    </LinearLayout>
+</LinearLayout>

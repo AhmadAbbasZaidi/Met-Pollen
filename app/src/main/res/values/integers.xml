@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="qlm_animation_duration">500</integer>
+
+    <integer name="square">0</integer>
+    <integer name="square_with_border">1</integer>
+    <integer name="square_with_rounded_corners">2</integer>
+    <integer name="square_with_rounded_cornerd_border">3</integer>
+    <integer name="circle_with_rounded_border">4</integer>
+    <integer name="circle_without_rounded_border">4</integer>
+</resources>
